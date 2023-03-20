@@ -4,8 +4,10 @@ import { Title } from './styles';
 
 export default function Main() {
     return(
-        <Title>
-            Main
-        </Title>
+        <Container>
+            
+            <h1>Meus Repositorios</h1>
+
+        </Container>
     )
 }
