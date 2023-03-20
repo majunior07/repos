@@ -15,6 +15,17 @@ export default createGlobalStyle`
     body {
         background: #0D2636;
         font-size: 14px;
+        -webkit-font-smoothing: antialiased !important;
+    }
+
+    body, input, button {
+        color: #222;
+        font-size: 14px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    button {
+        cursor: pointer;
     }
 
 
