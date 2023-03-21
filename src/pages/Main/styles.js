@@ -1,10 +1,17 @@
 import styled from "styled-components";
 
-export const Title = styled.h1`
-    color: #FF0000;
+export const Container = styled.div`
+    max-width: 700px;
+    background: #FFF;
+    border-radius: 4px;
+    padding: 30px;
+    margin: 80px auto;
+`;
 
+export const Form = styled.form`
 
-    span{
-        color: blue;
-    }
+`;
+
+export const SubmitButton = styled.button`
+
 `;
