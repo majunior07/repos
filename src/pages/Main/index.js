@@ -1,17 +1,32 @@
 import React, { useState } from "react";
-import { findRenderedComponentWithType } from "react-dom/test-utils";
 import { FaGithub, FaPlus } from 'react-icons/fa';
 import { Container, Form, SubmitButton } from './styles';
+
+import api from '../../services/api';
 
 export default function Main() {
 
     const [newRepo, setNewRepo] = useState('');
+    const [repositorios, setRepositorios] = useState([]);
 
-    function handleSubmit(e) {
+    async function handleSubmit(e) {
         e.preventDefault();
+
+        const response = await api.get(`repos/${newRepo}`);   
+
+        //console.log(response.data);
+
+        const data = {
+            name: response.data.full_name,
+        }
+
+        setRepositorios([...repositorios, data]);
+        setNewRepo();
+
+        //console.log(newRepo);
     }
 
-    function handleinputChange(e) {
+    function handleinputChange(e) { 
         setNewRepo(e.target.value);
     }
 
@@ -23,7 +38,7 @@ export default function Main() {
                 Meus Repositorios
             </h1>
 
-            <Form OnSubmit={handleSubmit}>
+            <Form onSubmit={handleSubmit}>
                 <input 
                 type="text" 
                 placeholder="Adicionar Repositorios" 
