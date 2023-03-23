@@ -1,0 +1,31 @@
+Buscando repos – Aula 19 
+
+npm install axios
+
+em src, criar a pasta services
+
+em services, criar o arquivo api.js
+src/services/api.js
+criar uma baseURL
+
+em Main (src/pages/Main/index.js) importar api (src/services/api.js)
+
+Quando as states “newRepo” ou “repositórios” forem atualizados, o sistema 
+vai chamar a função useCallback()
+
+#### Pausa para printar as telas ####
+
+Buscando repos pt2 – Aula 20
+
+qui 19:43 (noite)
+
+#### Assistir várias aulas para só então printar as telas… ####
+
+src/App.js
+src/routes.js
+src/pages/Main/index.js
+src/pages/Repositorio/index.js
+src/pages/Main/styles.js
+src/styles/global.js
+src/services/api.js
+src/txt
