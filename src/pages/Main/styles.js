@@ -80,7 +80,29 @@ export const SubmitButton = styled.button.attrs(prosp => ({
 `;
 
 
+export const List = styled.ul`
+    list-style: none;
+    margin-top: 20px;
 
+    li{
+        padding: 15px 0;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+        //vai ignorar o primeiro e vai aplicar a partir do segundo
+        & + li{
+            border-top: 1px solid #eee;
+        }
+
+        a{
+            color: #0D2636;
+            text-decoration: none;
+        }
+
+    }
+`;
 
 
 
