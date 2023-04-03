@@ -104,6 +104,17 @@ export const List = styled.ul`
     }
 `;
 
+export const DeleteButton = styled.button.attrs({
+    type: 'button'
+})`
+    background: transparent;
+    color: #0D2636;
+    border: 0; 
+    padding: 8px 7px;
+    outline: 0;
+    border-radius: 4px;
+`;
+
 
 
 
