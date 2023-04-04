@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useEffect } from "react";
 import { FaGithub, FaPlus, FaSpinner, FaBars, FaTrash } from 'react-icons/fa';
 import { Container, Form, SubmitButton, List, DeleteButton } from './styles';
 
@@ -10,6 +10,25 @@ export default function Main() {
     const [repositorios, setRepositorios] = useState([]);
     const [loading, setLoading] = useState(false);
     const [alert, setAlert] = useState(null);
+
+    // DidMount (Buscar)
+    useEffect(() => {
+        const repoStorage = localStorage.getItem('repos');
+
+        if(repoStorage){
+            setRepositorios(JSON.parse())
+            // JSON.parse => para transformar em objeto
+        }
+
+    }, []);
+
+
+    // DidUpdate (Salvar alterações)
+    useEffect(() => {
+        localStorage.setItem('repos', JSON.stringify(repositorios)); 
+        // JSON.stringify => para transformar em string
+    }, [repositorios]);
+
 
     const handleSubmit = useCallback((e) => {
 
@@ -56,6 +75,7 @@ export default function Main() {
 
     function handleinputChange(e) { 
         setNewRepo(e.target.value);
+        setAlert(null);
     }
 
     const handleDelete = useCallback((repo) => {
