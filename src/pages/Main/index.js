@@ -16,7 +16,7 @@ export default function Main() {
         const repoStorage = localStorage.getItem('repos');
 
         if(repoStorage){
-            setRepositorios(JSON.parse())
+            setRepositorios(JSON.parse(repoStorage))
             // JSON.parse => para transformar em objeto
         }
 
