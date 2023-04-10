@@ -1,10 +1,12 @@
 import React from "react";
 
+// {decodeURIComponent(match.params.repositorio)}
+
 export default function Repositorio({match}) {
     return(
-        <h1 style={{color: '#FFF'}}>
-            {decodeURIComponent(match.params.repositorio)}
-        </h1>
+        <Container>
+            
+        </Container>
     )
 }
 
