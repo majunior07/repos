@@ -9,7 +9,16 @@ export default function Repositorio({match}) {
         async function load(){
             const nomeRepo = decodeURIComponent(match.params.repositorio);
 
-            // const response = 
+           // const response = await api.get(`/repos/${nomeRepo}`)
+           // const issues = await api.get(`/repos/${nomeRepo}/issues`)
+
+           const [repositorioData, issuesData] = await Promise.all([
+            api.get(`/repos/${nomeRepo}`),
+            api.get(`/repos/${nomeRepo}/issues`)
+           ]);
+
+           console.log(repositorioData.data);
+           console.log(issuesData.data);
 
         }
 
